@@ -14,7 +14,7 @@ action :run do
   #run the command as the zenoss user
   execute "zendmd" do
     user "zenoss"
-    command "#{node[:zenoss][:server][:zenhome]}/bin/zendmd --commit --script=#{dmdscript}"
+    command "#{node[:zenoss][:server][:zenhome]}/bin/zendmd --commit --script=/tmp/#{dmdscript}"
     action :run
   end
   #remove the temp file
